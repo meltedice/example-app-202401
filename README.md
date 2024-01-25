@@ -17,4 +17,8 @@ v20.11.0
 % npm install prettier --save-dev
 % npm install eslint-plugin-prettier@latest --save-dev
 %   echo "add prettierrc.json"
+% npm run format
+% npx install-peerdeps --dev eslint-config-airbnb-base
+%   echo "configure .eslintrc.json"
+% npm run format
 ```

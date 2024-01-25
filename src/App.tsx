@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+// eslint-disable-next-line import/no-absolute-path
 import viteLogo from '/vite.svg'
+import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
@@ -32,4 +33,5 @@ function App() {
   )
 }
 
+// eslint-disable-next-line import/no-default-export
 export default App
