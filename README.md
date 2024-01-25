@@ -14,4 +14,5 @@ v20.11.0
 %   echo "replace @vitejs/plugin-react with @vitejs/plugin-react-swc in package.json"
 % npm install eslint eslint-plugin-react --save-dev
 %   echo "configure eslintrc.cjs as described in the README.md"
+% npm install prettier --save-dev
 ```
