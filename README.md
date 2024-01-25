@@ -15,4 +15,5 @@ v20.11.0
 % npm install eslint eslint-plugin-react --save-dev
 %   echo "configure eslintrc.cjs as described in the README.md"
 % npm install prettier --save-dev
+% npm install eslint-plugin-prettier@latest --save-dev
 ```
