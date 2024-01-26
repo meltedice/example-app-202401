@@ -14,9 +14,15 @@
     "filetypes",
     "npm"
   ],
-  "ignorePaths": ["node_modules"],
+  "ignorePaths": [
+    "node_modules"
+  ],
   // Whitelist words
-  "words": ["devcert", "peerdeps"],
+  "words": [
+    "devcert",
+    "peerdeps",
+    "tanstack"
+  ],
   // Blacklist words
   "flagWords": []
 }

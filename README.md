@@ -30,4 +30,5 @@ v20.11.0
 %   echo "configure vite.config.ts to support https on localhost"
 % npm install msw --save-dev
 % npx msw init public
+% npm install @tanstack/react-query
 ```
