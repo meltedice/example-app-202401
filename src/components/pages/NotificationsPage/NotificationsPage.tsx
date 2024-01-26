@@ -26,7 +26,7 @@ export function NotificationsPage() {
               onClick={() => handleNotificationClick(notification.id)}
             >
               {notification.id}: {notification.title} (
-              {notification.read ? 'read' : 'unread'})
+              {notification.read ? '既読' : '未読'})
             </li>
           )
         })}
