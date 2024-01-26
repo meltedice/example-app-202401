@@ -1,4 +1,6 @@
-import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { usePutNotificationRead } from '@/mutations/usePutNotificationRead'
 import { useGetNotification } from '@/queries/useGetNotification'
 
 export function NotificationDetailPage() {
@@ -6,6 +8,12 @@ export function NotificationDetailPage() {
   const { notification, isLoading } = useGetNotification({
     id: notificationId!,
   })
+  const { updateNotificationRead } = usePutNotificationRead()
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    updateNotificationRead({ id: notificationId!, read: true })
+  }, [isLoading, notificationId, updateNotificationRead])
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -26,6 +34,7 @@ export function NotificationDetailPage() {
         <dt>Read</dt>
         <dd>{notification.read ? 'true' : 'false'}</dd>
       </dl>
+      <Link to="/notifications">Back</Link>
     </div>
   )
 }

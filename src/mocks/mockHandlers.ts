@@ -5,7 +5,7 @@ import {
   buildNotificationMock,
 } from './mockModels'
 
-const mockNotifications: Notification[] = [
+let mockNotifications: Notification[] = [
   buildNotificationMock({ id: 'dummy-id-4', title: 'ダミータイトル4' }),
   buildNotificationMock({ id: 'dummy-id-3', title: 'ダミータイトル3' }),
   buildNotificationMock({ id: 'dummy-id-2', title: 'ダミータイトル2' }),
@@ -35,8 +35,8 @@ export function buildGetNotificationsMockHandler() {
 }
 
 export function buildGetNotificationDetailMockHandler() {
-  return http.get('/notifications/:notificationId', (req) => {
-    const notificationId = req.params.notificationId as string
+  return http.get('/notifications/:notificationId', ({ params }) => {
+    const notificationId = params.notificationId as string
     const mockNotification = mockNotifications.find((notification) => {
       return notification.id === notificationId
     })
@@ -52,4 +52,25 @@ export function buildGetNotificationDetailMockHandler() {
       }),
     })
   })
+}
+
+export function buildPutNotificationReadMockHandler() {
+  return http.put(
+    '/notifications/:notificationId/read',
+    async ({ request, params }) => {
+      const notificationId = params.notificationId as string
+      const data = (await request.json()) as { read: boolean }
+      const read = data?.read
+      mockNotifications = mockNotifications.map((notification) => {
+        if (notification.id === notificationId) {
+          return { ...notification, read }
+        }
+        return notification
+      })
+
+      return HttpResponse.json({
+        read: true,
+      })
+    }
+  )
 }

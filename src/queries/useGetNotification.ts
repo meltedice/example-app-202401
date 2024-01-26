@@ -21,7 +21,7 @@ export function useGetNotification({ id }: UseGetNotificationParams) {
     Error,
     GetNotificationResponse
   >({
-    queryKey: ['GET_NOTIFICATION'],
+    queryKey: ['GET_NOTIFICATION', { id }],
     queryFn: async () => {
       const res = await fetch(`/notifications/${id}`)
       return res.json()
@@ -29,5 +29,9 @@ export function useGetNotification({ id }: UseGetNotificationParams) {
   })
   const { notification } = data ?? {}
 
-  return { notification, isLoading, error }
+  return {
+    notification,
+    isLoading,
+    error,
+  }
 }
