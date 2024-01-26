@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "dictionaryDefinitions": [],
+  // https://cspell.org/docs/dictionaries/
+  "dictionaries": [
+    "en_US",
+    "softwareTerms",
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "fonts",
+    "filetypes",
+    "npm"
+  ],
+  "ignorePaths": ["node_modules"],
+  // Whitelist words
+  "words": ["peerdeps"],
+  // Blacklist words
+  "flagWords": []
+}
