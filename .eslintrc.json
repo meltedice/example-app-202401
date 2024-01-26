@@ -19,7 +19,12 @@
     // "tsconfigRootDir": __dirname,
   },
   // "prettier" must be the last item in "plugins" to remove all eslint rules that conflict with prettier
-  "plugins": ["@typescript-eslint", "react-refresh", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "unused-imports",
+    "react-refresh",
+    "prettier"
+  ],
   "rules": {
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/no-floating-promises": "error",
@@ -72,16 +77,17 @@
         "avoidEscape": true
       }
     ],
-    // "unused-imports/no-unused-imports": "error",
-    // "unused-imports/no-unused-vars": [
-    //   "warn",
-    //   {
-    //     "args": "after-used",
-    //     "argsIgnorePattern": "^_",
-    //     "vars": "all",
-    //     "varsIgnorePattern": "^_"
-    //   }
-    // ],
+    // 使ってない import を自動で消す
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
+    ],
     "react-refresh/only-export-components": [
       "warn",
       { "allowConstantExport": true }
@@ -95,7 +101,9 @@
     "react-hooks/exhaustive-deps": "warn",
     "require-jsdoc": "off",
     // override airbnb-base (recently changed some?)
+    // 行末の semicolon (;) を消す
     "semi": "off",
+    // 配列や関数の引数のが1行の場合最後の要素の後に , を付けない、複数行の場合は付ける
     "comma-dangle": "off"
   },
   "settings": {

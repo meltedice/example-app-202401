@@ -21,4 +21,6 @@ v20.11.0
 % npx install-peerdeps --dev eslint-config-airbnb-base
 %   echo "configure .eslintrc.json"
 % npm run format
+% npm install --save-dev eslint-plugin-unused-imports
+%   echo "add unused-imports configuration"
 ```
