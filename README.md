@@ -25,4 +25,5 @@ v20.11.0
 %   echo "add unused-imports configuration"
 % npm install --save-dev cspell@latest
 %   echo "configure cspell"
+%   echo "add path aliases config into tsconfig.json"
 ```
