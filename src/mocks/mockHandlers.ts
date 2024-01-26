@@ -1,5 +1,8 @@
 import { HttpResponse, http } from 'msw'
-import { buildNotificationMock } from './mockModels'
+import {
+  buildNotificationDetailMock,
+  buildNotificationMock,
+} from './mockModels'
 
 export function buildGetNotificationsMockHandler() {
   return http.get('/notifications', () => {
@@ -11,9 +14,24 @@ export function buildGetNotificationsMockHandler() {
         buildNotificationMock({
           id: 'dummy-id-1',
           title: 'ダミータイトル1',
-          read: true,
+          read: false,
         }),
       ],
+    })
+  })
+}
+
+export function buildGetNotificationDetailMockHandler() {
+  return http.get('/notification/:notificationId', (req) => {
+    const notificationId = req.params.notificationId as string
+
+    return HttpResponse.json({
+      notification: buildNotificationDetailMock({
+        id: notificationId,
+        title: 'ダミータイトル',
+        read: false,
+        body: `ダミーのお知らせの本文(${notificationId})`,
+      }),
     })
   })
 }

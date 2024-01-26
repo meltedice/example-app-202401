@@ -1,9 +1,5 @@
-export interface Notification {
-  id: string
-  read: boolean
-  title: string
-  body: string
-}
+import { NotificationDetail } from '@/queries/useGetNotification'
+import { Notification } from '@/queries/useGetNotifications'
 
 export function buildNotificationMock(
   params: Partial<Notification>
@@ -12,7 +8,18 @@ export function buildNotificationMock(
     id: 'dummy-id-1',
     read: false,
     title: 'ダミータイトル',
-    body: 'ダミーのお知らせ',
+    ...params,
+  }
+}
+
+export function buildNotificationDetailMock(
+  params: Partial<NotificationDetail>
+): NotificationDetail {
+  return {
+    id: 'dummy-id-1',
+    read: false,
+    title: 'ダミータイトル',
+    body: 'ダミーのお知らせ本文',
     ...params,
   }
 }

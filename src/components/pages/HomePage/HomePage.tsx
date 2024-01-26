@@ -2,9 +2,14 @@ import { useState } from 'react'
 // eslint-disable-next-line import/no-absolute-path
 import viteLogo from '/vite.svg'
 import reactLogo from '@/assets/react.svg'
+import { useGetNotifications } from '@/queries/useGetNotifications'
 
 export function HomePage() {
   const [count, setCount] = useState(0)
+  const { notifications } = useGetNotifications()
+
+  // eslint-disable-next-line no-console
+  console.debug('notifications:', notifications)
 
   return (
     <>
