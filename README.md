@@ -31,4 +31,6 @@ v20.11.0
 % npm install msw --save-dev
 % npx msw init public
 % npm install @tanstack/react-query
+% npm install vite-tsconfig-paths --save-dev
+%   echo "configure vite.config.ts to support '@/' in import path"
 ```
