@@ -1,6 +1,6 @@
 import { useGetNotifications } from '@/queries/useGetNotifications'
 
-export function HomePage() {
+export function NotificationsPage() {
   const { notifications, isLoading } = useGetNotifications()
 
   if (isLoading) {

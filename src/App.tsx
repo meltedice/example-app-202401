@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.css'
-import { HomePage } from './components/pages/HomePage'
+import { NotificationsPage } from './components/pages/NotificationsPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,7 +14,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <HomePage />
+      <NotificationsPage />
     </QueryClientProvider>
   )
 }
