@@ -28,4 +28,6 @@ v20.11.0
 %   echo "add path aliases config into tsconfig.json"
 % npm install devcert --save-dev
 %   echo "configure vite.config.ts to support https on localhost"
+% npm install msw --save-dev
+% npx msw init public
 ```
