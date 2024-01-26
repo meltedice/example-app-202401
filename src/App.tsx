@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.css'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { NotificationsPage } from './components/pages/NotificationsPage'
 
 const queryClient = new QueryClient({
@@ -11,10 +12,21 @@ const queryClient = new QueryClient({
   },
 })
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Navigate to="/notifications" />,
+  },
+  {
+    path: '/notifications',
+    element: <NotificationsPage />,
+  },
+])
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <NotificationsPage />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   )
 }
