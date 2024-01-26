@@ -26,4 +26,6 @@ v20.11.0
 % npm install --save-dev cspell@latest
 %   echo "configure cspell"
 %   echo "add path aliases config into tsconfig.json"
+% npm install devcert --save-dev
+%   echo "configure vite.config.ts to support https on localhost"
 ```

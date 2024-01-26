@@ -16,7 +16,7 @@
   ],
   "ignorePaths": ["node_modules"],
   // Whitelist words
-  "words": ["peerdeps"],
+  "words": ["devcert", "peerdeps"],
   // Blacklist words
   "flagWords": []
 }
