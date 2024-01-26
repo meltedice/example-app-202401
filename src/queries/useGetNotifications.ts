@@ -2,8 +2,8 @@ import { useQuery } from '@tanstack/react-query'
 
 export interface Notification {
   id: string
-  read: boolean
   title: string
+  read: boolean
 }
 
 interface GetNotificationsResponse {

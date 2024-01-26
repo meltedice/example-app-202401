@@ -2,20 +2,24 @@ import { useQuery } from '@tanstack/react-query'
 
 export interface NotificationDetail {
   id: string
-  read: boolean
   title: string
   body: string
+  read: boolean
 }
 
 interface UseGetNotificationParams {
   id: string
 }
 
+interface GetNotificationResponse {
+  notification: NotificationDetail
+}
+
 export function useGetNotification({ id }: UseGetNotificationParams) {
   const { data, isLoading, error } = useQuery<
     unknown,
     Error,
-    NotificationDetail
+    GetNotificationResponse
   >({
     queryKey: ['GET_NOTIFICATION'],
     queryFn: async () => {
@@ -23,6 +27,7 @@ export function useGetNotification({ id }: UseGetNotificationParams) {
       return res.json()
     },
   })
+  const { notification } = data ?? {}
 
-  return { notification: data, isLoading, error }
+  return { notification, isLoading, error }
 }

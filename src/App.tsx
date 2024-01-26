@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.css'
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { NotificationDetailPage } from './components/pages/NotificationDetailPage'
 import { NotificationsPage } from './components/pages/NotificationsPage'
 
 const queryClient = new QueryClient({
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/notifications',
     element: <NotificationsPage />,
+  },
+  {
+    path: '/notifications/:notificationId',
+    element: <NotificationDetailPage />,
   },
 ])
 

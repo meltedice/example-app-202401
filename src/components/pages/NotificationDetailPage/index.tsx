@@ -1,0 +1,1 @@
+export { NotificationDetailPage } from './NotificationDetailPage'

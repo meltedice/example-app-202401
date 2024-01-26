@@ -1,5 +1,8 @@
 import { setupWorker, StartOptions } from 'msw/browser'
-import { buildGetNotificationsMockHandler } from './mockHandlers'
+import {
+  buildGetNotificationDetailMockHandler,
+  buildGetNotificationsMockHandler,
+} from './mockHandlers'
 
 // API の mock 中でも通信を許可するパス名 例: "/src/" ./admin-web/ からの相対パス
 const pathnameWhiteList: string[] = ['/src/', '/public/', '/node_modules/']
@@ -29,7 +32,10 @@ const mockWorkerStartOptions: StartOptions = {
 }
 
 export async function startMockWorker() {
-  const mockHandlers = [buildGetNotificationsMockHandler()]
+  const mockHandlers = [
+    buildGetNotificationsMockHandler(),
+    buildGetNotificationDetailMockHandler(),
+  ]
   const mockWorker = setupWorker(...mockHandlers)
   await mockWorker.start(mockWorkerStartOptions)
 }

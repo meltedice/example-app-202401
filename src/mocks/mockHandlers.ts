@@ -22,7 +22,7 @@ export function buildGetNotificationsMockHandler() {
 }
 
 export function buildGetNotificationDetailMockHandler() {
-  return http.get('/notification/:notificationId', (req) => {
+  return http.get('/notifications/:notificationId', (req) => {
     const notificationId = req.params.notificationId as string
 
     return HttpResponse.json({
