@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5180",
     "build": "tsc && vite build",
     "cspell": "cspell '**/*.{ts,tsx}' --cache --gitignore",
     "format": "npm run format:prettier && npm run format:eslint && npm run tsc",
