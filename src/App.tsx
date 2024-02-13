@@ -13,6 +13,7 @@ const queryClient = new QueryClient({
   },
 })
 
+// ブラウザー上の URL によって表示するページを切り替えるためのルーターを作成します
 const router = createBrowserRouter([
   {
     path: '/',

@@ -3,6 +3,8 @@ import { useGetNotificationAndMarkAsRead } from '@/hooks/useGetNotificationAndMa
 
 export function NotificationDetailPage() {
   const { notificationId } = useParams()
+  // useGetNotificationAndMarkAsRead はお知らせ詳細取得 API を呼び出した上で、既読にする処理をしています
+  // このカスタムフック内で2つの API を呼び出しています
   const { notification, isLoading } = useGetNotificationAndMarkAsRead({
     id: notificationId!,
   })

@@ -4,6 +4,9 @@ import App from './App.tsx'
 import './index.css'
 
 async function main() {
+  // このサンプルアプリ内で呼び出されるすべての API をモック化するための処理です
+  // 本番ではこのコードは入りませんし、未使用時はビルド時に取り除くように対策をする必要があります
+  // モックの内容は src/mocks/mockHandlers.ts 内にあります
   const { startMockWorker } = await import('./mocks/mockWorker')
   await startMockWorker()
 

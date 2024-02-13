@@ -12,6 +12,8 @@ interface PutNotificationReadResponse {
 
 export function usePutNotificationRead() {
   const queryClient = useQueryClient()
+  // useMutation の方は useQuery と違って、更新処理を呼び出す function を返します
+  // 更新処理を呼び出す function を呼び出した時に初めて更新処理が走ります
   const { error, mutateAsync } = useMutation<
     PutNotificationReadResponse,
     Error,
