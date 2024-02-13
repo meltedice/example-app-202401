@@ -1,5 +1,24 @@
 # Example App 2024/01
 
+- vite
+  - ビルドツール
+- React
+  - フロントエンドライブラリー
+- tanstack/react-query
+  - fetch
+- react-router
+  - ルーティング
+- tailwindcss
+  - CSS のライブラリ
+- vitest
+  - 自動テスト
+- msw
+  - API のモック
+- Storybook
+  - UI カタログ
+
+## Command Log
+
 ```
 % volta install node@v20.11.0
 % node -v

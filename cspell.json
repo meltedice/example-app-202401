@@ -21,6 +21,7 @@
   "words": [
     "devcert",
     "peerdeps",
+    "tailwindcss",
     "tanstack"
   ],
   // Blacklist words
